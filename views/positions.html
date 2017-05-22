@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Irec-Front</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="active">
+	<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"></div>
+	<table class="table table-striped">
+		<tr>
+		  <th><p class="green lead text-center">Position</p></th>
+		  <th><p class="lead text-center">Reward</p></th>
+		  <th><p class="lead text-center">End date</p></th>
+		  <!--<th><p class="lead text-center">End date</p></th>-->
+		  <!--<th><p class="lead text-center">Sell</th>
+			<th><p class="lead text-center">Sales price</th>-->
+		</tr>
+		{{range $positions := .Posts}}
+			<tr>
+			  <td><a href=/positions/single/{{$positions.Idpositions}}><p class="lead text-center">{{$positions.Title}}</p></a><input type="hidden" name="title" value={{$positions.Title}}></td>
+			  <td><p class="lead text-center"> {{$positions.Reward}}</p><input type="hidden" name="reward" value={{$positions.Reward}}></td>
+			  <td><p class="lead text-center">{{$positions.Enddate}}</p><input type="hidden" name="enddate" value={{$positions.Enddate}}></td>
+			</tr>
+		{{end}}
+	</table>
+</div>
+</div>
+</div>
+</body>
+<script src="/static/main.js"></script>
+</html>
+
