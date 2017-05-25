@@ -140,7 +140,7 @@ func IsAuthenticated(w http.ResponseWriter, r *http.Request, next http.HandlerFu
 		return
 	}
 
-	if _, ok := session.Values["profile"]; !ok {
+	if _, ok := session.Values["id_token"]; !ok {
 		http.Redirect(w, r, "/unauth", http.StatusSeeOther)
 	} else {
 		next(w, r)
