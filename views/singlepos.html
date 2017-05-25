@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Irec-Front</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container-fluid">
+	<div class="col-md-4 col-md-offset-4">
+    <div class="col-xs-12 jumbotron text-center"><h3>iRec<h3></div>
+			<div>
+				<h2>{{.Title}}</h2></a>
+				<h3>Reward: {{.Reward}}</h3>
+				<h3>{{.Subtitle}}</h3>
+				<h4>{{.Text}}</h4>
+			</div>
+			
+			 <form action="/recommendation/{{.Idpositions}}" method="post">
+    			<div class="form-group">
+					<label for="Name">Name</label>
+					<input type="text" class="form-control" id="ReferralName1" name="Name" value="">
+				</div>
+				<div class="form-group">
+					<label for="Phone">Phone</label>
+					<input type="text" class="form-control" id="ReferralPhone1" name="Telephone" value="">
+				</div>
+				<div class="form-group">
+					<label for="Mail">Mail</label>
+					<input type="text" class="form-control" id="ReferralMail1" name="Mail" value="">
+				</div>
+					<button type="submit" class="btn btn-success">Confirm </button>
+			</form>
+
+  </div>
+</div>
+
+</body>
+<script src="/static/main.js"></script>
+</html>
+

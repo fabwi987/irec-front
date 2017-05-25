@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Irecommend</title>
+<title>Irec-Front</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -12,26 +12,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<script src="https://cdn.auth0.com/js/lock/10.15/lock.min.js"></script>
-<script>
-  var lock = new Auth0Lock('K2BhIttmtzU6yybfTsSRRnWqee5OO9tY', 'irec.eu.auth0.com', {
-    auth: {
-      redirectUrl: 'http://localhost:8082/callback',
-      responseType: 'code',
-      params: {
-        scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
-      }
-    }
-  });
-</script>
-
 <div class="container-fluid">
-  <div class="col-md-4 col-md-offset-4">
-    <div class="col-xs-12 jumbotron text-center"><h1>Welcome to iRec<h1></div>
-    <button class="btn btn-primary btn-lg btn-login btn-block" onclick="lock.show();">Login</button>
+	<div class="col-md-4 col-md-offset-4">
+    <div class="col-xs-12 jumbotron text-center">
+		<h3>iRec<h3>
+		<h2>{{.Name}}</h2>
+		<img src={{.Picture}} class="img-responsive" alt="Responsive image">
+
+	</div>
+			{{range $positions := .Posts}}
+			<div class="bg-info">
+				<a href=/positions/single/{{$positions.Idpositions}}><h2>{{$positions.Title}}</h2></a>
+				<h3>Reward: {{$positions.Reward}}</h3>
+				<h3>{{$positions.Subtitle}}</h3>
+			</div>
+			{{end}}
   </div>
 </div>
 
 </body>
+<script src="/static/main.js"></script>
 </html>
+
