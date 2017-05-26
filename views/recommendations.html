@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Irecommend</title>
+<title>Irec-Front</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -12,11 +12,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
-<div>
-  <img class="avatar" src="{{.picture}}"/>
-  <h2>Welcome {{.nickname}}</h2>
+<div class="container-fluid">
+	<div class="col-md-4 col-md-offset-4">
+    <div class="col-xs-12 jumbotron text-center">
+		<h3>iRec<h3>
+	</div>
+			{{range $rec := .Posts}}
+			<div class="bg-info">
+				<img class="avatar" src="{{$rec.Referral.Picture}}"/>
+				<h2>{{$rec.Referral.Name}}</h2></a>
+				<h4>{{$rec.Referral.Headline}}</h4></a>
+				<h4>Telephone: {{$rec.Referral.Telephone}}</h3>
+				<h4>Mail: {{$rec.Referral.Mail}}</h3>
+			</div>
+			{{end}}
+  </div>
 </div>
 
 </body>
+<script src="/static/main.js"></script>
 </html>
+

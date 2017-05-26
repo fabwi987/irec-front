@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Irecommend</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+	<div class="container-fluid">
+	<div class="col-md-4 col-md-offset-4">
+    <div class="col-xs-12 jumbotron text-center"><h3>iRec<h3>
+		<img class="avatar" src="{{.Picture}}"/>
+ 	    <h4>Welcome {{.Name}}, please verify your info</h4>
+	</div>
+			
+		<form action="/user/single/{{.UserID}}" method="post">
+    			
+				<div class="form-group">
+					<label for="Name">Name</label>
+					<input type="text" class="form-control" id="Name1" name="Name" value="{{.Name}}">
+				</div>
+				<div class="form-group">
+					<label for="Phone">Phone</label>
+					<input type="text" class="form-control" id="Phone1" name="Telephone" value="">
+				</div>
+				<div class="form-group">
+					<label for="Mail">Mail</label>
+					<input type="text" class="form-control" id="Mail1" name="Mail" value="">
+				</div>
+				<div class="form-group">
+					<label for="Mail">Headline</label>
+					<input type="text" class="form-control" id="Headline1" name="Headline" value="{{.Headline}}">
+				</div>
+				<div class="form-group">
+					<label for="Mail">ProfileURL</label>
+					<input type="text" class="form-control" id="ProfileURL1" name="ProfileURL" value="{{.ProfileURL}}">
+				</div>
+					<button type="submit" class="btn btn-success">Confirm </button>
+				
+		</form>
+
+
+  </div>
+</div>
+
+</body>
+</html>

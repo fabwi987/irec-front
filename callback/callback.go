@@ -65,6 +65,9 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	//session.Values["access_token"] = token.AccessToken
 	session.Values["name"] = profile["name"].(string)
 	session.Values["picture"] = profile["picture"].(string)
+	session.Values["Headline"] = profile["headline"].(string)
+	session.Values["ProfileURL"] = profile["publicProfileUrl"].(string)
+	session.Values["UserID"] = profile["user_id"].(string)
 
 	err = session.Save(r, w)
 	if err != nil {
@@ -73,6 +76,6 @@ func CallbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Redirect to logged in page
-	http.Redirect(w, r, "/positions", http.StatusSeeOther)
+	http.Redirect(w, r, "/usercontrol", http.StatusSeeOther)
 
 }

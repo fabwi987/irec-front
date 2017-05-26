@@ -16,13 +16,13 @@
 	<div class="col-md-4 col-md-offset-4">
     <div class="col-xs-12 jumbotron text-center">
 		<h3>iRec<h3>
-		<h2>{{.Name}}</h2>
-		<img src={{.Picture}} class="img-responsive" alt="Responsive image">
-
+		<img class="avatar" src="{{.Picture}}"/>
+		<h4>{{.Name}}</h4>
 	</div>
 			{{range $positions := .Posts}}
 			<div class="bg-info">
 				<a href=/positions/single/{{$positions.Idpositions}}><h2>{{$positions.Title}}</h2></a>
+				<a href=/recommendations/positions/{{$positions.Idpositions}}><h4>See recommendations</h4></a>
 				<h3>Reward: {{$positions.Reward}}</h3>
 				<h3>{{$positions.Subtitle}}</h3>
 			</div>
